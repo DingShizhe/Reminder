@@ -63,7 +63,8 @@ class App:
 
         self.app = QApplication(sys.argv)
         self.app.setQuitOnLastWindowClosed(False)
-        self.tray_icon = QSystemTrayIcon(QIcon("flower1.png"), self.app)
+        icon_path = os.path.join(sys.path[0], "flower1.png")
+        self.tray_icon = QSystemTrayIcon(QIcon(icon_path), self.app)
         self.data = Data()
         self.menu_f = [
             ('Separator', {}),
